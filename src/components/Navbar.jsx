@@ -1,4 +1,19 @@
-// src/components/Navbar.jsx
+function Arrow() {
+  return (
+    <svg
+      className="h-[1.05em] w-[1.05em] flex-none"
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" />
+    </svg>
+  );
+}
 
 function Flame() {
   return (
@@ -9,13 +24,7 @@ function Flame() {
       aria-hidden="true"
     >
       <defs>
-        <linearGradient
-          id="ember-flame"
-          x1="0"
-          y1="1"
-          x2="0"
-          y2="0"
-        >
+        <linearGradient id="ember-flame" x1="0" y1="1" x2="0" y2="0">
           <stop offset="0" stopColor="#FF5A00" />
           <stop offset="1" stopColor="#FFA34A" />
         </linearGradient>
@@ -37,25 +46,21 @@ function Flame() {
 
 export default function Navbar() {
   return (
-    // src/components/Navbar.jsx
-
-<header className="relative flex min-h-[30px] items-center justify-between gap-4 ">
+    <header className="flex py-4 px-10 items-center justify-between gap-4">
       <a
         href="#top"
         aria-label="Ember home"
-        className="flex items-center gap-[clamp(8px,1cqw,18px)]"
+        className="flex shrink-0 items-center gap-[clamp(8px,1cqw,18px)]"
       >
         <Flame />
-
         <b className="text-[clamp(20px,2.35cqw,42px)] font-extrabold leading-none tracking-[.2em]">
-          EMBER
-          <i className="not-italic text-[#FF6A0D]">.</i>
+          EMBER<i className="not-italic text-[#FF6A0D]">.</i>
         </b>
       </a>
 
       <nav
         aria-label="Main"
-        className="absolute left-1/2 hidden -translate-x-1/2 gap-[clamp(24px,4.7cqw,90px)] text-[clamp(14px,1.3cqw,24px)] font-medium md:flex"
+        className="hidden flex-1 items-center justify-center gap-[clamp(24px,4.7cqw,90px)] text-[clamp(14px,1.3cqw,24px)] font-medium md:flex"
       >
         <a
           href="#menu"
@@ -82,22 +87,9 @@ export default function Navbar() {
 
       <a
         href="#order"
-        className="inline-flex items-center justify-center gap-[.55em] whitespace-nowrap rounded-full border-[1.5px] border-[#FF6A0D] px-[clamp(18px,1.9cqw,34px)] py-[clamp(10px,1.1cqw,18px)] text-[clamp(13px,1.15cqw,21px)] font-medium leading-none text-[#FF6A0D] transition hover:-translate-y-0.5 hover:bg-[#FF6A0D] hover:text-[#140a04]"
+        className="inline-flex shrink-0 items-center justify-center gap-[.55em] whitespace-nowrap rounded-full border-[1.5px] border-[#FF6A0D] px-[clamp(18px,1.9cqw,34px)] py-[clamp(10px,1.1cqw,18px)] text-[clamp(13px,1.15cqw,21px)] font-medium leading-none text-[#FF6A0D] transition hover:-translate-y-0.5 hover:bg-[#FF6A0D] hover:text-[#140a04]"
       >
-        Order Now
-
-        <svg
-          className="h-[1.05em] w-[1.05em] flex-none"
-          viewBox="0 0 16 16"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" />
-        </svg>
+        Order Now <Arrow />
       </a>
     </header>
   );
