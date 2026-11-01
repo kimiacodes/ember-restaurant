@@ -46,7 +46,7 @@ function Flame() {
 
 export default function Navbar() {
   return (
-    <header className="flex py-4 px-10 items-center justify-between gap-4">
+    <header className="flex py-4 px-6 items-center justify-between gap-4">
       <a
         href="#top"
         aria-label="Ember home"

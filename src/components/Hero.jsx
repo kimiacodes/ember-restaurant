@@ -642,10 +642,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#070504] text-white">
+    <div className="min-h-screen bg-[#070504] text-white ">
       <style>{CSS}</style>
 
-      <main className="ember-hero relative overflow-hidden bg-[#070504] [container-type:inline-size] max-md:flex max-md:flex-col max-md:pb-10 md:aspect-[1672/941]">
+      <main className="ember-hero relative overflow-hidden px-4 bg-[#070504] [container-type:inline-size] max-md:flex max-md:flex-col max-md:pb-10 md:aspect-[1672/941]">
 
         {/* Background */}
         <div
@@ -724,15 +724,15 @@ export default function Hero() {
             </p>
 
             <h1 className="m-0 text-[clamp(44px,7.25cqw,140px)] font-extrabold italic leading-[.9] tracking-[-.035em] [text-wrap:balance] max-md:text-[clamp(46px,15vw,84px)]">
-              Made for the
+              A Different Kind of
               <span className="block text-[#FF6A0D]">
-                Hungry.
+                Delicious.
               </span>
             </h1>
 
             <p className="mt-[1.9cqw] max-w-[24em] text-[clamp(15px,1.45cqw,26px)] leading-[1.42] text-[#B7B0A9] max-md:mt-4 max-md:text-base">
-              Big burgers, bold flavors, and the kind of food that brings
-              people together.
+              
+              From stacked burgers to crispy chicken and more, every bite brings bold flavor and good vibes.
             </p>
 
             <div className="mt-[2.9cqw] flex flex-wrap gap-[1.2cqw] max-md:mt-6 max-md:gap-3">
