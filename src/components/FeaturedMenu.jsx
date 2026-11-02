@@ -16,7 +16,7 @@ const favorites = [
   {
     name: "Crispy Mashed Potato Fries",
     description: "Crispy fries and special sauce.",
-    price: "$18",
+    price: "$19",
     image: "/images/menu/crispy-mashed-potato-fries.webp",
     tag: "A side worth sharing",
   },
