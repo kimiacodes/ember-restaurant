@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function Arrow() {
   return (
     <svg
@@ -44,53 +46,129 @@ function Flame() {
   );
 }
 
-export default function Navbar() {
+function MenuIcon({ isOpen }) {
   return (
-    <header className="flex py-4 px-6 items-center justify-between gap-4">
+    <svg
+      className="h-6 w-6"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
+      {isOpen ? (
+        <path d="M6 6l12 12M18 6L6 18" />
+      ) : (
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      )}
+    </svg>
+  );
+}
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const links = [
+    { label: "Menu", href: "#menu" },
+    { label: "Our Story", href: "#story" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  return (
+    <header className="sticky top-0 z-50 flex items-center justify-between gap-3 border-b border-white/5 bg-[#140A04]/95 px-4 py-4 backdrop-blur-md sm:px-6">
       <a
         href="#top"
         aria-label="Ember home"
         className="flex shrink-0 items-center gap-[clamp(8px,1cqw,18px)]"
       >
         <Flame />
+
         <b className="text-[clamp(20px,2.35cqw,42px)] font-extrabold leading-none tracking-[.2em]">
           EMBER<i className="not-italic text-[#FF6A0D]">.</i>
         </b>
       </a>
 
+      {/* Desktop navigation */}
       <nav
         aria-label="Main"
         className="hidden flex-1 items-center justify-center gap-[clamp(24px,4.7cqw,90px)] text-[clamp(14px,1.3cqw,24px)] font-medium md:flex"
       >
-        <a
-          href="#menu"
-          aria-current="page"
-          className="relative py-[.6em] transition-colors hover:text-[#FF6A0D] after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-[#FF6A0D]"
-        >
-          Menu
-        </a>
-
-        <a
-          href="#story"
-          className="py-[.6em] transition-colors hover:text-[#FF6A0D]"
-        >
-          Our Story
-        </a>
-
-        <a
-          href="#contact"
-          className="py-[.6em] transition-colors hover:text-[#FF6A0D]"
-        >
-          Contact
-        </a>
+        {links.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            className="py-[.6em] transition-colors hover:text-[#FF6A0D]"
+          >
+            {link.label}
+          </a>
+        ))}
       </nav>
 
+      {/* Desktop order button */}
       <a
         href="#order"
-        className="inline-flex shrink-0 items-center justify-center gap-[.55em] whitespace-nowrap rounded-full border-[1.5px] border-[#FF6A0D] px-[clamp(18px,1.9cqw,34px)] py-[clamp(10px,1.1cqw,18px)] text-[clamp(13px,1.15cqw,21px)] font-medium leading-none text-[#FF6A0D] transition hover:-translate-y-0.5 hover:bg-[#FF6A0D] hover:text-[#140a04]"
+        className="btn-17 hidden shrink-0 items-center justify-center gap-1.5 px-4 py-2 text-xs md:inline-flex md:px-5 md:py-2.5 md:text-sm"
       >
-        Order Now <Arrow />
+        <span className="text-container">
+          <span className="text">Order Now</span>
+        </span>
+
+        <span className="text-container">
+          <span className="text">
+            <Arrow />
+          </span>
+        </span>
       </a>
+
+      {/* Mobile controls */}
+      <div className="flex shrink-0 items-center gap-3 md:hidden">
+        <a
+          href="#order"
+          className="btn-17 inline-flex shrink-0 items-center justify-center gap-1.5 px-4 py-3 text-xs"
+        >
+          <span className="text-container">
+            <span className="text">Order</span>
+          </span>
+
+          <span className="text-container">
+            <span className="text">
+              <Arrow />
+            </span>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition hover:border-[#FF6A0D] hover:text-[#FF6A0D]"
+        >
+          <MenuIcon isOpen={isOpen} />
+        </button>
+      </div>
+
+      {/* Mobile dropdown */}
+      {isOpen && (
+        <nav
+          id="mobile-menu"
+          aria-label="Mobile navigation"
+          className="absolute right-4 top-full z-50 flex w-[35%] flex-col gap-1 rounded-2xl border border-white/10 bg-[#140A04] p-3 shadow-xl md:hidden"
+        >
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="rounded-xl px-4 py-3 text-sm font-medium transition-colors hover:bg-white/5 hover:text-[#FF6A0D]"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      )}
     </header>
   );
 }

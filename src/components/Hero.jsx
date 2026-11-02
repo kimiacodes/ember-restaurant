@@ -723,34 +723,36 @@ export default function Hero() {
               BOLD FLAVORS. REAL FIRE.
             </p>
 
-            <h1 className="m-0 text-[clamp(44px,7.25cqw,140px)] font-extrabold italic leading-[.9] tracking-[-.035em] [text-wrap:balance] max-md:text-[clamp(46px,15vw,84px)]">
-              A Different Kind of
-              <span className="block text-[#FF6A0D]">
-                Delicious.
-              </span>
-            </h1>
+           <h1 className="m-0 text-[clamp(38px,7.25cqw,140px)] font-extrabold italic leading-[.9] tracking-[-.035em] [text-wrap:balance] max-md:text-[clamp(36px,10vw,64px)]">
+  A Different Kind of
+  <span className="block text-[#FF6A0D]">
+    Delicious.
+  </span>
+</h1>
 
             <p className="mt-[1.9cqw] max-w-[24em] text-[clamp(15px,1.45cqw,26px)] leading-[1.42] text-[#B7B0A9] max-md:mt-4 max-md:text-base">
               
               From stacked burgers to crispy chicken and more, every bite brings bold flavor and good vibes.
             </p>
 
-            <div className="mt-[2.9cqw] flex flex-wrap gap-[1.2cqw] max-md:mt-6 max-md:gap-3">
-              <a
-                href="#menu"
-                className="inline-flex h-[clamp(48px,4cqw,72px)] items-center justify-center gap-[.55em] whitespace-nowrap rounded-full bg-[#FF6A0D] px-[clamp(22px,2.6cqw,48px)] text-[clamp(14px,1.3cqw,24px)] font-bold leading-none text-[#170b04] transition hover:-translate-y-0.5 hover:bg-[#ff8133]"
-              >
-                Explore Menu
-                <Arrow />
-              </a>
+            <div className="mt-[2.9cqw] flex flex-wrap gap-3 max-md:mt-6">
+  <a
+    href="#menu"
+    className="btn-17 inline-flex items-center justify-center gap-1.5 px-4 py-2 text-xs md:px-5 md:py-2.5 md:text-sm"
+  >
+    <span className="text-container">
+      <span className="text">Explore Menu</span>
+    </span>
 
-              <a
-                href="#story"
-                className="inline-flex h-[clamp(48px,4cqw,72px)] items-center justify-center whitespace-nowrap rounded-full border-[1.5px] border-white/40 px-[clamp(22px,2.6cqw,48px)] text-[clamp(14px,1.3cqw,24px)] font-bold leading-none transition hover:-translate-y-0.5 hover:border-[#FF6A0D] hover:text-[#FF6A0D]"
-              >
-                Our Story
-              </a>
-            </div>
+    <span className="text-container">
+      <span className="text">
+        <Arrow />
+      </span>
+    </span>
+  </a>
+
+ 
+</div>
           </section>
         </div>
 
